@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+}
+
+.game {
+    /*width 50% of the screen and center it*/
+    width: 50%;
+    margin: 0 auto;
+    /*background color*/
+    background-color: lightblue;
+    /*center all the content*/
+    text-align: center;
+    /*padding*/
+
+}
+
+.flag {
+    width: 50%;
+
+
+
+}
+
+.guessButt button {
+    width: 45%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.guessButt button:hover {
+    background-color: lightgreen;
+}
+
+.correct {
+    width: 50%;
+    background: green;
+    padding: 20px;
+    /*center itself*/
+    margin: 0 auto;
+}
+
+.wrong {
+    width: 50%;
+    background: red;
+    padding: 20px;
+    /*center itself*/
+    margin: 0 auto;
+
+}
