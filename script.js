@@ -1,9 +1,17 @@
 function startNewRound() {
+    //when question = 10 , display the score and the total number of questions, and a button to start a new game , reset the score and the question number and refresh the page
+    if (document.querySelector(".question").innerHTML == 10) {
+        document.querySelector("body").innerHTML = `<div class="endPage">score : ${document.querySelector(".score").innerHTML}<button onclick="location.reload()">start a new game</button></div>`;
+    }
+
+
+    
+
     //remove the correct or wrong message
     document.querySelector(".correct")?.remove();
     document.querySelector(".wrong")?.remove();
-   
-        
+
+
 
     //change the flag randomly from the images folder to random countries code
     let countries = [
@@ -27,7 +35,7 @@ function startNewRound() {
     let country = countries[random][1];
     document.querySelector(".flag").src = `/images/4x3/${code}.svg`;
 
-    
+
 
     //change the buttons text to random countries names with the correct answer in one of them randomly , withut repeating
 
@@ -52,14 +60,29 @@ function startNewRound() {
         buttons[i].addEventListener("click", function () {
             if (i == correct) {
                 document.querySelector("body").innerHTML += `<p class="correct">correct</p>`;
-                    //wait 1 second and start a new round
-                setTimeout(startNewRound, 1000);
+                //score +1 and display it in the score div
+                let score = document.querySelector(".score").innerHTML;
+                score++;
+                document.querySelector(".score").innerHTML = score;
 
-                
+                //question +1 and display it in the question div
+                let question = document.querySelector(".question").innerHTML;
+                question++;
+                document.querySelector(".question").innerHTML = question;
+
+
+                //wait 1 second and start a new round
+                setTimeout(startNewRound, 1);
+
+
             } else {
                 document.querySelector("body").innerHTML += `<p class="wrong">wrong</p>`;
+                //question +1 and display it in the question div
+                let question = document.querySelector(".question").innerHTML;
+                question++;
+                document.querySelector(".question").innerHTML = question;
                 //wait 1 second and start a new round
-                setTimeout(startNewRound, 1000);
+                setTimeout(startNewRound, 1);
 
             }
         })
