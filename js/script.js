@@ -21,19 +21,11 @@ function startNewRound() {
         }
     }
 
-
-
-
-
-
-
-
     //save the code in a variable and also its position in the array
-
     let random = Math.floor(Math.random() * countries.length);
     let code = countries[random][0];
     let country = countries[random][1];
-    document.querySelector(".flag").src = `images/4x3/${code}.svg`;
+    document.querySelector(".flag").src = `../images/4x3/${code}.svg`;
 
 
 

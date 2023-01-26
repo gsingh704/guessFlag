@@ -3,12 +3,13 @@ body {
 
 }
 
+
 .game {
     /*width 50% of the screen and center it*/
     width: 50%;
     margin: 0 auto;
     background-color: lightblue;
-    min-width: 400px;
+
     padding: 10px;
 }
 
@@ -38,7 +39,7 @@ body {
 button:hover {
     background-color: lightgreen;
     transform: scale(1.1);
-    
+
 }
 
 .correct {
@@ -58,42 +59,30 @@ button:hover {
 
 }
 
-.sidebar {
-    background: rgb(0, 191, 255);
-    padding: 10px;
-    /*center all the coonetnt in the div*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
+
 
 .score-counter {
     text-align: center;
+    font-size: 50px;
 
 }
 
 .score {
-    font-size: 100px;
     background-color: green;
-    padding: 20px;
-
+    padding: 10px;
 }
 
 .fail {
-    font-size: 100px;
     background-color: red;
-    padding: 20px;
+    padding: 10px;
 }
 
 .question {
-    font-size: 100px;
     background-color: lightblue;
+    padding: 10px;
 }
 
 .restart {
-
     background: rgb(0, 0, 0);
     color: white;
     padding: 20px;
@@ -106,4 +95,39 @@ button:hover {
     padding: 20px;
     /*center itself*/
     margin: 0 auto;
+}
+
+
+/*on mobile devices, the sidebar should be bottom*/
+@media screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    .game {
+        width: 100%;
+    }
+
+    .score-counter {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+    .count {
+        padding: 0px;
+        width: 33.33%;
+    }
+    .restart {
+        width: 33.33%;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+  
+
 }
