@@ -7,7 +7,7 @@ function startNewRound() {
     document.querySelector(".correct")?.remove();
     document.querySelector(".wrong")?.remove();
 
-    
+
     //when question = 10 , display a popup with the score and the fail and ask if the user wants to play again 
     if (document.querySelector(".question").innerHTML == 10) {
         let score = document.querySelector(".score").innerHTML;
@@ -33,7 +33,7 @@ function startNewRound() {
     let random = Math.floor(Math.random() * countries.length);
     let code = countries[random][0];
     let country = countries[random][1];
-    document.querySelector(".flag").src = `/images/4x3/${code}.svg`;
+    document.querySelector(".flag").src = `images/4x3/${code}.svg`;
 
 
 
