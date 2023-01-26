@@ -1,9 +1,12 @@
 function startNewRound() {
-    //when question = 10 , display the score and the total number of questions, and a button to start a new game , reset the score and the question number and refresh the page
+    //when question = 10 , display an end card over the game that make background dark and display the score and a button to start a new game
     if (document.querySelector(".question").innerHTML == 10) {
-        document.querySelector("body").innerHTML = `<div class="endPage">score : ${document.querySelector(".score").innerHTML}<button onclick="location.reload()">start a new game</button></div>`;
+        document.querySelector("body").innerHTML += `<div class="end-card">
+        <h1>Game Over</h1>
+        <p>your score is ${document.querySelector(".score").innerHTML}</p>
+        <button onclick="location.reload()">New Game</button>
+        </div>`;
     }
-
 
     
 

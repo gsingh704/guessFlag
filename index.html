@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-        <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 
@@ -14,21 +15,32 @@
         <img src="images/4x3/ac.svg" alt="flag" class="flag">
 
         <!-- form , guess the correct flag -->
-        <div class="guessButt">
+        <div class="btn-group">
             <!-- four buttons -->
             <button>Button 1</button>
             <button>Button 2</button>
             <button>Button 3</button>
             <button>Button 4</button>
         </div>
-        <div class="counter">
-            Score:<div class="score"> 0</div>
-            Question:<div class="question"> 0</div>/10
 
-        </div>
 
     </div>
+    <div class="sidebar">
+        <div class="score-counter">
+
+            <div class="score"> 0</div>
+            <hr>
+            <div class="fail">0</div>
+            <hr>TOTAL Questions
+            <hr>
+            <div class="question"> 0</div>
+        </div>
+
+        <button class="new-button restart">Restart</button>
+    </div>
+
     <script type="module" src="js/script.js"></script>
+
 </body>
 
 </html>

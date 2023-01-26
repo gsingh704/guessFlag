@@ -3,21 +3,31 @@ import countries from './countries.js';
 // your code here
 
 function startNewRound() {
-    //when question = 10 , display the score and the total number of questions, and a button to start a new game , reset the score and the question number and refresh the page
-    if (document.querySelector(".question").innerHTML == 10) {
-        document.querySelector("body").innerHTML = `<div class="endPage">score : ${document.querySelector(".score").innerHTML}<button onclick="location.reload()">start a new game</button></div>`;
-    }
-
-
-    
-
     //remove the correct or wrong message
     document.querySelector(".correct")?.remove();
     document.querySelector(".wrong")?.remove();
 
-
-
     
+    //when question = 10 , display a popup with the score and the fail and ask if the user wants to play again 
+    if (document.querySelector(".question").innerHTML == 10) {
+        let score = document.querySelector(".score").innerHTML;
+        let fail = document.querySelector(".fail").innerHTML;
+        let playAgain = confirm(`your score is ${score} and your fail is ${fail} , do you want to play again ?`);
+        if (playAgain) {
+            document.querySelector(".score").innerHTML = 0;
+            document.querySelector(".question").innerHTML = 0;
+            document.querySelector(".fail").innerHTML = 0;
+            startNewRound();
+        }
+    }
+
+
+
+
+
+
+
+
     //save the code in a variable and also its position in the array
 
     let random = Math.floor(Math.random() * countries.length);
@@ -34,7 +44,7 @@ function startNewRound() {
     buttons[correct].innerHTML = country;
     let used = [random];
     for (let i = 0; i < buttons.length; i++) {
-        if (i != correct) {
+        if (i != correct && !buttons[i].classList.contains("new-button")) {
             let random = Math.floor(Math.random() * countries.length);
             while (used.includes(random)) {
                 random = Math.floor(Math.random() * countries.length);
@@ -71,6 +81,12 @@ function startNewRound() {
                 let question = document.querySelector(".question").innerHTML;
                 question++;
                 document.querySelector(".question").innerHTML = question;
+
+                //fail +1 and display it in the fail div
+                let fail = document.querySelector(".fail").innerHTML;
+                fail++;
+                document.querySelector(".fail").innerHTML = fail;
+
                 //wait 1 second and start a new round
                 setTimeout(startNewRound, 1);
 

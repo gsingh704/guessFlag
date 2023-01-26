@@ -1,0 +1,109 @@
+body {
+    display: flex;
+
+}
+
+.game {
+    /*width 50% of the screen and center it*/
+    width: 50%;
+    margin: 0 auto;
+    background-color: lightblue;
+    min-width: 400px;
+    padding: 10px;
+}
+
+
+.btn-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+}
+
+.btn-group button {
+    width: 49.5%;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: lightgreen;
+    transform: scale(1.1);
+    
+}
+
+.correct {
+    width: 50%;
+    background: green;
+    padding: 20px;
+    /*center itself*/
+    margin: 0 auto;
+}
+
+.wrong {
+    width: 50%;
+    background: red;
+    padding: 20px;
+    /*center itself*/
+    margin: 0 auto;
+
+}
+
+.sidebar {
+    background: rgb(0, 191, 255);
+    padding: 10px;
+    /*center all the coonetnt in the div*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.score-counter {
+    text-align: center;
+
+}
+
+.score {
+    font-size: 100px;
+    background-color: green;
+    padding: 20px;
+
+}
+
+.fail {
+    font-size: 100px;
+    background-color: red;
+    padding: 20px;
+}
+
+.question {
+    font-size: 100px;
+    background-color: lightblue;
+}
+
+.restart {
+
+    background: rgb(0, 0, 0);
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.endPage {
+    width: 50%;
+    background: rgb(0, 191, 255);
+    padding: 20px;
+    /*center itself*/
+    margin: 0 auto;
+}
