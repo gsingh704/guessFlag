@@ -1,3 +1,7 @@
+import countries from './countries.js';
+
+// your code here
+
 function startNewRound() {
     //when question = 10 , display the score and the total number of questions, and a button to start a new game , reset the score and the question number and refresh the page
     if (document.querySelector(".question").innerHTML == 10) {
@@ -13,21 +17,7 @@ function startNewRound() {
 
 
 
-    //change the flag randomly from the images folder to random countries code
-    let countries = [
-        //code , country name
-        ["ac", "Ascension Island"],
-        ["ad", "Andorra"],
-        ["ae", "United Arab Emirates"],
-        ["af", "Afghanistan"],
-        ["ag", "Antigua and Barbuda"],
-        ["ai", "Anguilla"],
-        ["al", "Albania"],
-        ["am", "Armenia"],
-        ["ao", "Angola"],
-        ["aq", "Antarctica"],
-        ["ar", "Argentina"]
-    ]
+    
     //save the code in a variable and also its position in the array
 
     let random = Math.floor(Math.random() * countries.length);

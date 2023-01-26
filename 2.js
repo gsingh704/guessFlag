@@ -1,26 +1,44 @@
-import { countries } from "./countries.js";
-
-let score = 0;
-let question = 0;
-
-
 function startNewRound() {
     //when question = 10 , display the score and the total number of questions, and a button to start a new game , reset the score and the question number and refresh the page
-    if (question === 10) {
-        document.querySelector("body").innerHTML = `<div class="endPage">score : ${score}<button onclick="location.reload()">start a new game</button></div>`;
+    if (document.querySelector(".question").innerHTML == 10) {
+        document.querySelector("body").innerHTML = `<div class="endPage">score : ${document.querySelector(".score").innerHTML}<button onclick="location.reload()">start a new game</button></div>`;
     }
+
+
+    
 
     //remove the correct or wrong message
     document.querySelector(".correct")?.remove();
     document.querySelector(".wrong")?.remove();
 
-    // Select random country from the array
+
+
+    //change the flag randomly from the images folder to random countries code
+    let countries = [
+        //code , country name
+        ["ac", "Ascension Island"],
+        ["ad", "Andorra"],
+        ["ae", "United Arab Emirates"],
+        ["af", "Afghanistan"],
+        ["ag", "Antigua and Barbuda"],
+        ["ai", "Anguilla"],
+        ["al", "Albania"],
+        ["am", "Armenia"],
+        ["ao", "Angola"],
+        ["aq", "Antarctica"],
+        ["ar", "Argentina"]
+    ]
+    //save the code in a variable and also its position in the array
+
     let random = Math.floor(Math.random() * countries.length);
     let code = countries[random][0];
     let country = countries[random][1];
     document.querySelector(".flag").src = `/images/4x3/${code}.svg`;
 
-    // Set text for buttons and select one as the correct answer
+
+
+    //change the buttons text to random countries names with the correct answer in one of them randomly , withut repeating
+
     let correct = Math.floor(Math.random() * 4);
     let buttons = document.querySelectorAll("button");
     buttons[correct].innerHTML = country;
@@ -36,22 +54,40 @@ function startNewRound() {
         }
     }
 
-    // Add event listener to check if the answer is correct
+    //add event listener to the buttons to check if the answer is correct or not
+
     for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click", function() {
+        buttons[i].addEventListener("click", function () {
             if (i == correct) {
                 document.querySelector("body").innerHTML += `<p class="correct">correct</p>`;
-                //increment score and question
+                //score +1 and display it in the score div
+                let score = document.querySelector(".score").innerHTML;
                 score++;
+                document.querySelector(".score").innerHTML = score;
+
+                //question +1 and display it in the question div
+                let question = document.querySelector(".question").innerHTML;
                 question++;
+                document.querySelector(".question").innerHTML = question;
+
+
+                //wait 1 second and start a new round
                 setTimeout(startNewRound, 1);
+
+
             } else {
                 document.querySelector("body").innerHTML += `<p class="wrong">wrong</p>`;
-                //increment question
+                //question +1 and display it in the question div
+                let question = document.querySelector(".question").innerHTML;
                 question++;
+                document.querySelector(".question").innerHTML = question;
+                //wait 1 second and start a new round
                 setTimeout(startNewRound, 1);
+
             }
-        });
+        })
     }
 }
 startNewRound();
+
+
